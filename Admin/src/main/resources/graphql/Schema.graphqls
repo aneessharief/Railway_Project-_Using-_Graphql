@@ -1,0 +1,52 @@
+schema {
+    query: Query,
+    mutation:Mutation
+}
+
+type TrainDetails {
+    trainNo:ID!,
+ 	trainName:String,
+	startStation:String,
+	destStation:String,
+	arrivalTime:String,
+	deptTime:String,
+ 	duration:String,
+	noOfSeats:Int,
+	firstClassACFare:Int,
+	twoTierAcFare:Int,
+	threeTierAcFare:Int,
+	sleeperFare:Int
+    }
+    
+type Query{
+    getAllDetails:[TrainDetails]
+    getDetailsByTrainNo(trainNo:Int) : TrainDetails
+   }
+   
+type Mutation{
+    updatetrainName(trainNo:Int,trainName:String ,
+	 startStation:String,
+	 destStation:String,
+	 arrivalTime:String ,
+	 deptTime:String,
+	 duration: String,
+	 noOfSeats:Int,
+	 firstClassACFare:Int,
+	 twoTierAcFare:Int,
+	 threeTierAcFare:Int, 
+	 sleeperFare:Int):TrainDetails
+    
+    deleteTrain(trainNo:Int):TrainDetails
+    
+    addTrain(trainNo:Int,trainName:String ,
+	 startStation:String,
+	 destStation:String,
+	 arrivalTime:String ,
+	 deptTime:String,
+	 duration: String,
+	 noOfSeats:Int,
+	 firstClassACFare:Int,
+	 twoTierAcFare:Int,
+	 threeTierAcFare:Int, 
+	 sleeperFare:Int):TrainDetails
+}
